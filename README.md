@@ -1,1 +1,3 @@
-under construction...
+# Site
+
+A simple blog site, under construction.
