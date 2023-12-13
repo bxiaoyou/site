@@ -1,14 +1,12 @@
 ---
 import Layout from "$layouts/Layout.astro";
 import { getCollection } from "astro:content";
-import { IconArrowRight } from "@tabler/icons-solidjs";
 const allBlogs = await getCollection("blogs");
 ---
 
 <Layout title={`@bxiaoyou's blogs`}>
   <main class="container mx-auto py-16">
     <h6 class="headline mb-6 text-4xl text-white font-bold">This is where I will post about my journey learning Astro.</h6>
-    <IconArrowRight/>
     <ul>
       {
         allBlogs.map((post) => (

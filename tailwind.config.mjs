@@ -16,6 +16,9 @@ export default {
     },
     extend: {},
   },
-  prefix: "tw-",
-  plugins: ["@tailwindcss/container-queries"],
+  plugins: [
+    require("@tailwindcss/container-queries"),
+    require("@tailwindcss/typography"),
+    require('tailwindcss-debug-screens')
+  ],
 };

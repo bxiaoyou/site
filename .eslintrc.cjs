@@ -5,11 +5,10 @@ module.exports = {
     node: true,
   },
   extends: [
-    "xo",
+    "xo-typescript",
     "plugin:astro/recommended",
     "plugin:astro/jsx-a11y-recommended",
     "plugin:svelte/recommended",
-    "plugin:solid/typescript",
     "plugin:prettier/recommended",
   ],
   overrides: [
@@ -17,17 +16,15 @@ module.exports = {
       env: {
         node: true,
       },
+      extends: ["xo"],
       files: [".eslintrc.{js,cjs}"],
       parserOptions: {
         sourceType: "script",
       },
     },
     {
-      files: ["*.ts", "*.tsx"],
-      extends: ["xo-typescript"],
-      rules: {
-        "@typescript-eslint/triple-slash-reference": "off",
-      },
+      extends: ["plugin:solid/typescript"],
+      files:["/src/components/solid/*.tsx"],
     },
     {
       files: ["*.astro"],
@@ -54,6 +51,7 @@ module.exports = {
   },
   ignorePatterns: ["node_modules"],
   rules: {
+    "@typescript-eslint/triple-slash-reference": "off",
     "solid/self-closing-comp": "off",
   },
 };
