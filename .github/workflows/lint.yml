@@ -9,7 +9,7 @@ on:
       - production
 
 env:
-  NODE_VERSION: 21
+  NODE_VERSION: 20
 
 jobs:
   linting:
@@ -24,8 +24,11 @@ jobs:
       - name: Code Checkout
         uses: actions/checkout@v2
 
+      - name: Install PNPM
+        run: npm i pnpm -g
+
       - name: Install Dependencies
-        run: npm i
+        run: pnpm i
 
       - name: Code Linting
         run: npm run lint
